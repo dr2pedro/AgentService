@@ -4,7 +4,7 @@ data class WorkingTaskStatus(
     override val message: String?,
     override val timestamp: String? = Instant.now().toString()
 ) : TaskStatus {
-    override val status = TaskState.WORKING
+    override val state = TaskState.WORKING
     override fun toWorking(task: Task) {
         throw Error("Task ${task.id} already in WORKING state")
     }

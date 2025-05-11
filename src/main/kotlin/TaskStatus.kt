@@ -1,5 +1,5 @@
 interface TaskStatus {
-    val status: TaskState
+    val state: TaskState
     val message: String?
     val timestamp: String?
 

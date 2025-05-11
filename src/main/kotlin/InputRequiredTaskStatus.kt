@@ -4,7 +4,7 @@ data class InputRequiredTaskStatus(
     override val message: String?,
     override val timestamp: String? = Instant.now().toString()
 ) : TaskStatus {
-    override val status = TaskState.INPUT_REQUIRED
+    override val state = TaskState.INPUT_REQUIRED
     override fun toWorking(task: Task) {
         val message = "[INFO] (${this.timestamp}) Task id ${task.id} status now is: WORKING"
         task.updateStatus(WorkingTaskStatus(message))

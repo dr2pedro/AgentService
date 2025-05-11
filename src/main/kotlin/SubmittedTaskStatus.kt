@@ -4,7 +4,7 @@ data class SubmittedTaskStatus(
     override val message: String?,
     override val timestamp: String? = Instant.now().toString()
 ) : TaskStatus {
-    override val status = TaskState.SUBMITTED
+    override val state = TaskState.SUBMITTED
     override fun toWorking(task: Task) {
         val message = "[INFO] (${this.timestamp}) Task id ${task.id} status now is: WORKING"
         task.updateStatus(WorkingTaskStatus(message))

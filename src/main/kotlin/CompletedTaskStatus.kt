@@ -4,7 +4,7 @@ class CompletedTaskStatus(
     override val message: String?,
     override val timestamp: String? = Instant.now().toString()
 ) : TaskStatus {
-    override val status = TaskState.COMPLETED
+    override val state = TaskState.COMPLETED
     override fun toWorking(task: Task) {
         throw Error("Task ${task.id} already COMPLETED")
     }
